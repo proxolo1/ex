@@ -1,13 +1,13 @@
-class Db {
+export default class Db {
     constructor(connection) {
         this.connection = connection;
     }
 
     createTableProducts() {
-        return this.connection.query("create table products (product_id int auto_increment primary key,product_name varchar(255),quantity int,order_id int,foreign key (order_id) references orders(order_id))");
+        return this.connection.query("create table products (product_id int auto_increment primary key,product_name varchar(255),order_id int,foreign key (order_id) references orders(order_id))");
     }
     createTableCustomer() {
-        return this.connection.query("create table customer (customer_id int auto_increment primary key,customer_name varchar(255),age int)");
+        return this.connection.query("create table customer (customer_id int auto_increment primary key,customer_name varchar(255),email varchar(255))");
     }
     createTableOrder() {
         return this.connection.query("create table orders (order_id int auto_increment primary key,order_name varchar(255),pincode int,customer_id int,foreign key (customer_id) references customer(customer_id))");
@@ -16,7 +16,7 @@ class Db {
         return this.connection.query("create table promotion (promotion_id int auto_increment primary key,promotion_name varchar(255),value int,product_id int,foreign key (product_id) references products(product_id))");
     }
     insertCustomer(customer) {
-        return this.connection.query(`insert into customer (customer_name,age) values ('${customer.name}',${customer.age})`, (err) => {
+        return this.connection.query(`insert into customer (customer_name,email) values ('${customer.name}',${customer.email})`, (err) => {
             if (err) { console.log(err); return err; };
             console.log("sucessfully inserted !!!!!!!");
         })
@@ -31,7 +31,7 @@ class Db {
         });
     }
     insertProduct(product) {
-        return this.connection.query(`insert into products (product_name,quantity,order_id) values ('${product.name}',${product.quantity},${product.orderId})`);
+        return this.connection.query(`insert into products (product_name,order_id) values ('${product.name}',${product.quantity},${product.orderId})`);
     }
     insertPromotion(promotion) {
         return this.connection.query(`insert into promotion (promotion_name,value,product_id) values ('${promotion.name}',${promotion.value},${promotion.id})`);
@@ -50,18 +50,20 @@ class Db {
     }
 }
 
-module.exports={Db}
-// let mysql = require('mysql')
-// let connection = mysql.createConnection(
-//     {
-//         host: 'localhost',
-//         user: 'root',
-//         password: '',
-//         database: 'day 12',
-//         multipleStatements: true
-//     }
-// );
-// connection.connect();
+let mysql = require('mysql')
+let connection = mysql.createConnection(
+    {
+        host: 'localhost',
+        user: 'root',
+        password: '',
+        database: 'day 12',
+        multipleStatements: true
+    }
+    );
+    connection.connect();
+    
+    module.exports=new Db(connection);
+
 // let db = new Db(connection)
 
 // db.createTableCustomer();
