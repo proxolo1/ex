@@ -1,0 +1,1 @@
+[{"id":1,"name":"ajay","email":"ajay.santhosh@ust.com","role":"admin","course":{"name":"maths","level":"2","description":"idk","trainer":"trainer","duration":"2 months","maxRegistration":10,"noRegistration":2}}]

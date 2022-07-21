@@ -1,8 +1,30 @@
 {
-    "scripts": {
-        "test": "jest"
-    },
-    "dependencies": {
-        "jest": "^28.1.1"
-    }
+  "scripts": {
+    "test": "jest"
+  },
+  "name": "elearn",
+  "version": "1.0.0",
+  "description": "e-learning application",
+  "main": "'e learn.js'",
+  "dependencies": {
+    "jest": "^28.1.3",
+    "mysql": "^2.18.1",
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "proxolo1"
+  },
+  "keywords": [
+    "jest"
+  ],
+  "jest": {
+
+    "collectCoverage":true
+
+  }
+  ,
+  "author": "ajay",
+  "license": "MIT"
 }
