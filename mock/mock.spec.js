@@ -10,7 +10,7 @@ describe('mocking function',()=>{
        });
        expect(readLine(input)).toBe(input);
     })
-    test("mocking filesystem writefile function",()=>{
+    test("mocking console.log function",()=>{
         let output,input="hello world";
         console.log=jest.fn(input=>{
             output=input.toString();
@@ -27,7 +27,7 @@ describe("mocking using spyon",()=>{
         expect(result).toBe(input)
         expect(rl.question.mock).toBeTruthy();
     })
-    test("mocking console.log using spyOn",()=>{
+    test("mocking filesystem writefile using spyOn",()=>{
         const input="hello world";
         jest.spyOn(fs,"writeFile");
         expect(fs.writeFile.mock).not.toBeFalsy();
