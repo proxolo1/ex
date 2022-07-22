@@ -1,5 +1,5 @@
 const { readLine } = require("../../functions/functions");
-const print =require('./main') 
+const myModule =require('./main') 
 const rl=require('readline-sync')
 const fs=require('fs')
 describe('mocking function',()=>{
@@ -10,14 +10,20 @@ describe('mocking function',()=>{
        });
        expect(readLine(input)).toBe(input);
     })
-    test("mocking console.log function",()=>{
+    test("mocking console log function",()=>{
         let output,input="hello world";
         console.log=jest.fn(input=>{
             output=input.toString();
         })
-        print(input);
+        myModule.print(input);
         expect(input).toBe(output)
     })
+    test("mocking readFile function",()=>{
+        fs.readFile=jest.fn();
+        myModule.file["read"];
+        expect(fs.readFile.mock).toBeTruthy();
+    })
+
 })
 describe("mocking using spyon",()=>{
     test("readline return string",()=>{
@@ -27,7 +33,7 @@ describe("mocking using spyon",()=>{
         expect(result).toBe(input)
         expect(rl.question.mock).toBeTruthy();
     })
-    test("mocking filesystem writefile using spyOn",()=>{
+    test("mocking console.log using spyOn",()=>{
         const input="hello world";
         jest.spyOn(fs,"writeFile");
         expect(fs.writeFile.mock).not.toBeFalsy();
@@ -40,6 +46,13 @@ describe("mocking modules",()=>{
         
         expect(rl.question.mock).toBeTruthy();
         expect(rl.question).toHaveBeenCalled();
-
+        
+    })
+    test("mocking file module",()=>{
+        jest.mock("fs");
+        expect(fs.writeFile.mock).toBeTruthy();
+        expect(fs.readFile.mock).toBeTruthy();
     })
 })
+
+
