@@ -1,9 +1,12 @@
 let dev = document.getElementById('developer');
 let str = "nice to meet you";
-let i = 0;
-let menu = document.querySelector('.menu');
+let i = 0,j=0;
+let menus = document.querySelectorAll('.menu');
 let main = document.querySelector('.main');
-main.style.left = '34em'
+let counter=document.querySelectorAll('#count')
+let divLine=document.querySelector('.line')
+let scrollTop=0;
+
 setInterval(() => {
 
     if (i < str.length) {
@@ -21,15 +24,36 @@ setInterval(() => {
 
 let navs = document.querySelectorAll('.nav');
 
-menu.addEventListener('mousemove', (events) => {
-    console.log(navs);
-    navs.forEach(nav => {
-        nav.style.transform = 'rotateZ(360deg)';
+menus.forEach(menu => {
+    menu.addEventListener('mousemove', (events) => {
+        console.log(navs);
+        navs.forEach(nav => {
+            nav.style.transform = 'rotateZ(360deg)';
+        })
+    })
+   
+})
+menus.forEach(menu => {
+    menu.addEventListener('mouseout', (events) => {
+        navs.forEach(nav => {
+            nav.style.transform = 'rotateZ(354deg)';
+        })
+
     })
 })
-menu.addEventListener('mouseout', (events) => {
-    navs.forEach(nav => {
-        nav.style.transform = 'rotateZ(354deg)';
-    })
-
+document.addEventListener('scroll',() => {
+    console.log(window.pageYOffset);
+    let ABOUTop=405,ABOUTBottom=1410;
+    if(ABOUTop<=Math.floor(window.pageYOffset)&& ABOUTBottom>=Math.floor(window.pageYOffset)){
+       setInterval(()=>{
+        if(j<=10){
+            counter[0].innerHTML=j++;
+            divLine.style.backgroundColor="green";
+        }
+        else{
+         clearInterval();
+         divLine.style.backgroundColor="red";
+        }
+       },500)
+    }
 })

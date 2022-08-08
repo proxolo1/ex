@@ -1,71 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Square+Peg&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <section id="home">
-      <div class="portifolio">
-        <div class="menu">
-          <div class="title">
-            <p class="tracking-in-expand">Atlas</p>
-          </div>
-          <div class="menu-items">
-            <ul class="ul">
-              <li class="nav"><a href="#home">#Home</a></li>
-              <li class="nav"><a href="#about">#About</a></li>
-              <li class="nav"><a href="">#Services</a></li>
-              <li class="nav"><a href="">#portifolio</a></li>
-              <li class="nav"><a href="">#Contact</a></li>
-            </ul>
-          </div>
-        </div>
 
-        <div class="main">
-          <div id="info-container">
-            <div class="intro">
-              <div class="name">
-                <p id="name">Hello, my name is <i>Atlas</i></p>
-                <p id="developer"></p>
-              </div>
-            </div>
-            <div class="profile">
-              <div class="dp"></div>
-            </div>
-          </div>
-          <div id="particles-js"></div>
-        </div>
-      </div>
-    </section>
-    <section id="about">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Square+Peg&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <div id="particle-js">
+
+  </div>
+  <div class="home" id="home">
+
+    <div class="portifolio">
       <div class="menu">
         <div class="title">
-          <p>Atlas</p>
+          <p class="tracking-in-expand">Atlas</p>
         </div>
         <div class="menu-items">
           <ul class="ul">
-            <li class="nav"><a href="#home">Home</a></li>
-            <li class="nav"><a href="#about">About</a></li>
-            <li class="nav"><a href="">Services</a></li>
-            <li class="nav"><a href="">portifolio</a></li>
-            <li class="nav"><a href="">Contact</a></li>
+            <li class="nav"><a href="#home">#Home</a></li>
+            <li class="nav"><a href="#about">#About</a></li>
+            <li class="nav"><a href="#services">#Services</a></li>
+            <li class="nav"><a href="">#portifolio</a></li>
+            <li class="nav"><a href="">#Contact</a></li>
           </ul>
         </div>
       </div>
-    </section>
-    <script src="particles.min.js"></script>
-    <script src="app.js"></script>
-    <script src="./main.js"></script>
-  </body>
+
+      <div class="main">
+        <div id="info-container">
+          <div class="intro">
+            <div class="name">
+              <p class="hello">Hello, </p>
+              <p class="atlas">my name is <i>Atlas</i></p>
+              <p id="developer"></p>
+            </div>
+          </div>
+          <div class="profile">
+            <div class="dp"></div>
+          </div>
+        </div>
+        <div id="particles-js"></div>
+
+      </div>
+    </div>
+  </div>
+  <div class="about" id="about">
+
+    <div class="about-header">
+      <p>About me</p>
+    </div>
+    <div class="personal-info">
+      <div class="personal-details">
+        <ul class="ls">
+          <li><b>first name : </b>atlas</li>
+          <li><b>last name : </b>almi</li>
+          <li><b>age : </b>33</li>
+          <li><b>birthdate : </b>22 september 1993</li>
+          <li><b>language : </b>english</li>
+
+        </ul>
+        <ul class="ls">
+          <li><b>first name : </b>atlas</li>
+          <li><b>last name : </b>almi</li>
+          <li><b>age : </b>33</li>
+          <li><b>birthdate : </b>22 september 1993</li>
+          <li><b>language : </b>english</li>
+        </ul>
+      </div>
+      <div class="personal-blocks">
+        <div class="row">
+          <div class="colum">
+            <span class="plus">+</span><span id="count">10</span>
+            <p>Experience</p>
+          </div>
+          <div class="colum">
+            <span id="count">+320</span>
+            <p>Awards</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="colum">
+            <span id="count">+232</span>
+            <p>satisfied customers</p>
+          </div>
+          <div class="colum">
+            <span id="count">+97</span>
+            <p>completed projects</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="line">
+    </div>
+  </div>
+  <div class="services">
+    <div class="header">
+
+    </div>
+    <div class="service-list" id="services">
+      <div class="row">
+        <div class="colum ">
+          <div class="icon ">
+            <img src="https://img.icons8.com/color-glass/48/000000/workstation.png" />
+          </div>
+          <div class="title-service">
+            <p>WEB DESIGNER</p>
+          </div>
+          <div class="description">
+            <p>The creation and conception of a website or web design is the design of the web interface: interactional
+              architecture, organization of pages</p>
+          </div>
+        </div>
+        <div class="colum ">
+          <div class="icon ">
+            <img src="https://img.icons8.com/stickers/50/000000/internet.png" />
+          </div>
+          <div class="title-service">
+            <p>WEB DEVELOPMENT</p>
+          </div>
+          <div class="description">
+            <p>
+              Web development is based on the use of languages ​​(HTML / CSS, JavaScript, PHP…) to write programs which
+              are then executed by computers.
+            </p>
+          </div>
+        </div>
+        <div class="colum ">
+          <div class="icon ">
+            <img src="https://img.icons8.com/stickers/50/000000/multiple-cameras.png" />
+          </div>
+          <div class="title-service">
+            <p>PHOTOGRAPHY</p>
+          </div>
+          <div class="description">
+            <p>Photography is the art, application, and the practice of creating durable images by recording light,
+              either electronically by means of an image</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="colum ">
+          <div class="icon ">
+            <img src="https://img.icons8.com/stickers/50/000000/video-gallery.png" />
+          </div>
+          <div class="title-service ">
+            VIDEO EDITING
+          </div>
+          <div class="description">
+            <p>Video editing consists of selecting sequences of images pre-recorded in video and assembling them into a
+              coherent sequence</p>
+          </div>
+        </div>
+        <div class="colum ">
+          <div class="icon ">
+            <img src="https://img.icons8.com/stickers/50/000000/design.png" />
+          </div>
+          <div class="title-service">
+            <p>GRAPHIC DESIGN</p>
+          </div>
+          <div class="description">
+            <p>
+              Graphic design is a craft where professionals create visual content to communicate messages. By applying
+              visual hierarchy and page layout techniques
+            </p>
+          </div>
+        </div>
+        <div class="colum ">
+          <div class="icon ">
+            <img src="https://img.icons8.com/stickers/50/000000/marketing.png" />
+          </div>
+          <div class="title-service">
+            <p>MARKETING</p>
+          </div>
+          <div class="description">
+            <p>Marketing, or marketing, is an organizational culture, a state of mind, which seeks to prioritize the
+              expectations and needs of stakeholders</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="particles.min.js"></script>
+  <script src="app.js"></script>
+  <script src="./main.js"></script>
+</body>
+
 </html>
