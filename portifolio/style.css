@@ -65,29 +65,31 @@
 }
 
 .menu-items {
-  margin-top: 2em;
+  /* margin-top: 2em; */
+  height: 50vh;
 }
 
 .menu-items .ul {
   margin-left: 34px;
   list-style: none;
-  height: 12em;
+  height: 100%;
 }
 
 .nav {
-  margin-top: 10px;
-  /* border-bottom: 1px solid rgb(163, 155, 155); */
+  padding-bottom: 6px;
+  margin-bottom: 48px;
+  border-bottom: 1px solid rgb(163, 155, 155);
   width: 10em;
   text-align: center;
   /* transform: rotateZ(180deg); */
-  transition: 0.5s ease-in-out;
+  /* transition: 0.5s ease-in-out; */
 }
 
 .nav a {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: large;
   text-decoration: none;
-  color: turquoise;
+  color: white;
 }
 
 .nav :hover {
@@ -100,11 +102,12 @@
   z-index: 55;
 }
 
-/* .name {
-  margin-left: 5em;
-} */
+.name {
+  padding-left: 20px;
+}
+
 .name .hello {
-  font-family: "Open Sans", sans-serif;
+  font-family: fantasy;
   font-size: 40px;
   margin-top: 5em;
   font-weight: lighter;
@@ -115,10 +118,13 @@
 }
 
 .atlas {
+  padding-left:30px;
   font-size: 3em;
-  font-family: monospace;
+  font-family: cursive;
 }
-
+.atlas~p{
+  font-family: serif;
+}
 .name #developer {
   font-size: 60px;
   margin-top: 10px;
