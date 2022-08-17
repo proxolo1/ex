@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <canvas id="canvas"></canvas>
+    </div>
+  </body>
+  <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    let interval = null;
+    const balls = [
+      {
+        x: 100,
+        y: 100,
+        dx: 5,
+        dy: 5,
+        radius: 25,
+        color: "blue",
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
+          ctx.closePath();
+          ctx.fillStyle = this.color;
+          ctx.fill();
+        },
+      },
+      {
+        x: 200,
+        y: 200,
+        dx: 2,
+        dy: 2,
+        radius: 25,
+        color: "red",
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
+          ctx.closePath();
+          ctx.fillStyle = this.color;
+          ctx.fill();
+        },
+      },
+      {
+        x: 300,
+        y: 300,
+        dx: 4,
+        dy: 9,
+        radius: 25,
+        color: "black",
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
+          ctx.closePath();
+          ctx.fillStyle = this.color;
+          ctx.fill();
+        },
+      },
+      {
+        x: 50,
+        y: 50,
+        dx: 9,
+        dy: 9,
+        radius: 25,
+        color: "purple",
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
+          ctx.closePath();
+          ctx.fillStyle = this.color;
+          ctx.fill();
+        },
+      },
+      {
+        x: 90,
+        y: 50,
+        dx: 9,
+        dy: 5,
+        radius: 25,
+        color: "green",
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
+          ctx.closePath();
+          ctx.fillStyle = this.color;
+          ctx.fill();
+        },
+      },
+      {
+        x: 10,
+        y: 20,
+        dx: 7,
+        dy: 7,
+        radius: 25,
+        color: "yellow",
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
+          ctx.closePath();
+          ctx.fillStyle = this.color;
+          ctx.fill();
+        },
+      },
+    ];
+    document.addEventListener("mouseover", () => {
+      interval = setInterval(() => {
+        drawBalls();
+        checkCollition();
+      }, 10);
+    });
+    document.addEventListener("mouseout", () => {
+      clearInterval(interval);
+      console.table(balls);
+    });
+    function drawBalls() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      balls.forEach((ball) => {
+        ball.draw();
+        ball.x += ball.dx;
+        ball.y += ball.dy;
+        if (ball.x <= 0 || ball.x >= canvas.width) {
+          ball.dx *= -1;
+        }
+        if (ball.y <= 0 || ball.y >= canvas.height) {
+          ball.dy *= -1;
+        }
+      });
+    }
+    function checkCollition() {
+      for (let i = 0; i < balls.length; i++) {
+        for (let j = i + 1; j < balls.length; j++) {
+          if (
+            balls[i].x - balls[i].radius >= balls[j].x &&
+            balls[i].x + balls[i].radius <= balls[j].x
+          ) {
+            clearInterval(interval);
+            console.log("x collide");
+            balls[i].dx *= -1;
+            balls[j].dx *= -1;
+          }
+        }
+      }
+    }
+  </script>
+</html>
