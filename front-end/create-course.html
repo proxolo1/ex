@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+      integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <iframe src="./nav/nav.html"></iframe>
+    <div class="container-fluid text-center">
+      <div class="row content">
+        <div class="col-sm-2 sidenav py-5">
+          <p><a class="btn" href="dashboard.html">dashboard</a></p>
+          <!-- <p><a class="btn" href="#">link</a></p>
+          <p><a class="btn" href="#">link</a></p> -->
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Manage courses
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse show"
+                aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <ul>
+                    <li class="list-group-item">
+                      <a  class="btn " href="manage-course.html">edit/delete courses</a>
+                    </li>
+                    <li class="list-group-item"><a  class="btn " href="create-course.html">create courses</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  course registration
+                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <p></p>
+                    <a  class="btn " href="user-register-course.html" class="btn"
+                      >course registration list</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-8 text-left">
+          <form class="row">
+           
+              <div class="container">
+                  <h2>add course</h2>
+                <div
+                  class="row d-flex justify-content-center align-items-center"
+                >
+                  <div class="col-xl-9">
+
+                    <div class="card" style="border-radius: 15px">
+                      <div class="card-body">
+                        <div class="row align-items-center pt-4 pb-3">
+                          <div class="col-md-3 ps-5">
+                            <h6 class="mb-0">course name</h6>
+                          </div>
+                          <div class="col-md-9 pe-5">
+                            <input
+                              type="text"
+                              class="form-control form-control-lg"
+                            />
+                          </div>
+                        </div>
+
+                        <hr class="mx-n3" />
+
+                       
+
+
+                        <div class="row align-items-center py-3">
+                          <div class="col-md-3 ps-5">
+                            <h6 class="mb-0">course description</h6>
+                          </div>
+                          <div class="col-md-9 pe-5">
+                            <textarea
+                              class="form-control"
+                              rows="3"
+                              placeholder="Message sent to the employer"
+                            ></textarea>
+                          </div>
+                        </div>
+
+                        <hr class="mx-n3" />
+                        <div class="row align-items-center py-3">
+                            <div class="col-md-3 ps-5">
+                              <h6 class="mb-0">course period</h6>
+                            </div>
+                            <div class="col-md-9 pe-5">
+                                <input type="number" id="typeNumber" class="form-control" min="1" max="10" />
+                            </div>
+                          </div>
+  <hr class="mx-n3" />
+                        <div class="px-5 py-4">
+                          <button type="submit" class="btn btn-primary btn-lg">
+                            submit course
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+          </form>
+        </div>
+        <div class="col-sm-2 sidenav"></div>
+      </div>
+    </div>
+
+    <footer class="container-fluid text-center">
+      <p>Footer Text</p>
+    </footer>
+  </body>
+</html>
